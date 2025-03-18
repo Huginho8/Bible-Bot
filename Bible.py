@@ -33,7 +33,7 @@ Final Response as the Apostle John: Respond in a reflective, personal, and conve
 synthesis_temperature = 0.4
 
 # Streamlit UI elements
-st.title("BibleBot")
+st.title("John - Disciple of Jesus")
 
 # Reset chat functionality
 if st.button("Reset Chat"):
@@ -104,7 +104,7 @@ if ask_button:
     # Response Synthesis
     synthesis_model = genai.GenerativeModel(model_name='gemini-2.0-flash-exp', generation_config=genai.types.GenerationConfig(temperature=synthesis_temperature))
     synthesis_prompt_with_results = synthesis_prompt.format(grounding_results=grounding_results, rag_results=rag_results)
-
+    
     try:
         response = synthesis_model.generate_content(synthesis_prompt_with_results)
         with st.chat_message("user"):
